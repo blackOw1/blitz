@@ -1,0 +1,35 @@
+@use '../utils';
+
+.units__units {
+    width: 392px;
+    height: 192px;
+}
+
+.unit {
+    width: 32px;
+    height: 32px;
+    // background-color: utils.$color-light-gray;
+    border-width: 2px;
+    border-style: solid;
+    // border: 2px solid utils.$color-almost-black;
+    border-radius: 50%;
+}
+
+.unit-active {
+    background-color: utils.$color-light-gray;
+    border-color: utils.$color-almost-black;
+}
+
+.unit-depleted {
+    background-color: transparent;
+    border-color: utils.$color-almost-black;
+}
+
+.unit-frozen {
+    background-color: utils.$color-frozen;
+    border-color: darken(utils.$color-frozen, 10%);
+}
+
+.unit-frozen-d {
+    border-color: darken(utils.$color-frozen, 10%);
+}

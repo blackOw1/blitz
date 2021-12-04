@@ -1,0 +1,16 @@
+{
+  "name": "blitz-game",
+  "version": "2.0.0",
+  "description": "A game where you attack your opponent's units until they have no more units left. The player that has their units reduced to zero loses the game.",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Gerardo Ortiz",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1",
+    "parcel": "^2.0.1"
+  }
+}

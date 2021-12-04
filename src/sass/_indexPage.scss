@@ -1,0 +1,383 @@
+.columns {
+    padding: 48px;
+    height: 100vh;
+}
+
+.player-info {
+
+    .player-name {
+        @include font-48;
+        @include font-uppercase;
+        font-style: italic;
+        margin-bottom: 16px;
+        color: #6c718f;
+        opacity: 1;
+        transition: opacity 250ms;
+    }
+}
+
+.player-health-container {
+    width: 320px;
+
+    .player-units {
+
+        color: #6c718f;
+        &__name {
+            @include font-default;
+        }
+        &__units {
+            @include font-default;
+        }
+    }
+    .player-bar {
+        // width: 320px;
+        height: 24px;
+        border-radius: 8px;
+        background-color: #2a3050;
+        margin-top: 8px;
+        &__hit-points {
+            height: 24px;
+            border-radius: 8px;
+        }
+    }
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    // border-radius: 24px;
+    background-color: #2a3050;
+    padding: 24px 24px 48px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 500; // mobile
+    display: none;
+
+    @media only screen and (min-width: 720px) {
+        width: 320px;
+        height: 500px;
+        border-radius: 24px;
+        background-color: #2a3050;
+        padding: 24px 24px 48px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__title {
+        margin-bottom: 24px;
+        color: rgba(255, 255, 255, 0.72);
+    }
+
+    &__text {
+        color: rgba(145, 153, 206, 0.64);
+    }
+
+    &__activity {
+        display: grid;
+        grid-gap: 16px;
+        max-height: calc(100% - 48px);
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+        }
+    }
+}
+
+.units {
+    &__title {
+        @include font-uppercase;
+        margin-bottom: 24px;
+        text-align: center;
+        color: #6c718f;
+        @include font-24;
+    }
+    &__units {
+        width: 392px;
+        height: 192px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 8px;
+    }
+    &__title.player-1 {
+        margin-bottom: 0;
+        margin-top: 24px;
+    }
+}
+
+
+
+// MODAL WINDOW
+
+.modal {
+    background-color: #4b5277;
+    padding: 24px 72px;
+    // padding: 50px 25px;
+    border-radius: 24px;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+
+    opacity: 0;
+    transition: opacity 250ms;
+
+    &__text {
+        @include font-24;
+        color: rgba(255, 255, 255, 0.72);
+    }
+
+    &__heads-or-tails {
+
+        .heads-or-tails {
+
+            margin-top: 24px;
+
+            &__coin {
+                width: 72px;
+                height: 72px;
+                background-color: #2a3050;
+                border-radius: 50%;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+
+                .coin-heads,
+                .coin-tails {
+                    @include font-24;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.modal-battle {
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 300;
+
+    opacity: 0;
+    transition: opacity 250ms;
+
+    .atk {
+        background-color: #388E3C;
+    }
+
+    .end-turn {
+        background-color: #D32F2F;
+    }
+
+    .atk,
+    .end-turn {
+        width: 96px;
+        height: 96px;
+        color: rgba(255, 255, 255, 0.80);
+        border-radius: 50%;
+        @include font-24;
+        cursor: pointer;
+        
+        opacity: 0;
+        transition: 250ms;
+    }
+
+    .atk.visible,
+    .end-turn.visible {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .card-number {
+        padding: 24px 48px;
+        width: 150px;
+        height: 158px;
+        background-color: #4b5277;
+        border-radius: 24px;
+        margin: 0 56px;
+        opacity: 0.96;
+        text-align: center;
+
+        &__number {
+            color: #fff;
+            font-weight: bold;
+            @include font-24;
+        }
+
+        .revealed-number {
+            @include font-96;
+            font-weight: normal;
+        }
+    }
+}
+
+.modal-winning-message {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 400;
+
+    &__text {
+        font-size: 72px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.72);
+        margin-bottom: 48px;
+    }
+}
+
+.active-player-panel {
+    width: 100%;
+    height: 50vh;
+    background-color: #191d35;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 250ms;
+}
+
+// CLASSES
+
+.opacity-100 {
+    opacity: 0.72;
+}
+
+.opacity-24 {
+    opacity: 0.24 !important;
+}
+
+.transition-delay-125ms {
+    transition-delay: 125ms !important;
+}
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.margin-top {
+    margin-top: 50vh;
+}
+
+.margin-bottom {
+    margin-bottom: 50vh;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.unit {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #333b67;
+}
+
+.unit-outline {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: #333b67;
+}
+
+.scaled {
+    transform: scale(0);
+    transition: transform 125ms;
+}
+
+.disabled {
+    opacity: 0.16 !important;
+    cursor: default !important;
+}
+
+.transition-delay {
+    transition-delay: 1.5s;
+}
+
+// Used to change the color of the card itself
+
+.black {
+    background-color: $black !important;
+}
+.yellow {
+    background-color: $yellow !important;
+}
+
+.cyan {
+    background-color: $cyan !important;
+}
+
+.purple {
+    background-color: $purple !important;
+}
+
+.hp-green {
+    background-color: $hp-green;
+}
+
+.hp-yellow {
+    background-color: $hp-yellow;
+}
+
+.hp-red {
+    background-color: $hp-red;
+}
+
+.pointer-events-disabled {
+    pointer-events: none;
+}
+
+.unit-depleted {
+    background-color: transparent;
+    border: 2px solid #333b67;
+}
+
+.unit-depleted-frozen {
+    background-color: transparent;
+    border-color: $frozen;
+}
+
+.frozen {
+    background-color: $frozen;
+}
+
+.border-radius-edit {
+    border-radius: 8px 0 0 8px !important;
+}
+
+.c-turn {
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.cursor-en {
+    cursor: pointer;
+}

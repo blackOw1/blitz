@@ -1,0 +1,19 @@
+@mixin font-uppercase {
+    text-transform: uppercase;
+}
+
+@mixin font-default {
+    font-size: 1rem;
+}
+
+@mixin font-24 {
+    font-size: 1.5rem;
+}
+
+@mixin font-48 {
+    font-size: 3rem;
+}
+
+@mixin font-96 {
+    font-size: 6rem;
+}

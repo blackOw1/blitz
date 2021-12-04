@@ -1,0 +1,87 @@
+@use 'variables' as var;
+
+.def-color {
+    background-color: var.$color-almost-black;
+}
+
+.black {
+    background-color: var.$color-black;
+}
+
+.cyan {
+    background-color: var.$color-cyan;
+}
+
+.purple {
+    background-color: var.$color-purple;
+}
+
+.yellow {
+    background-color: var.$color-yellow;
+}
+
+.null {
+    background-color: var.$color-light-gray;
+}
+
+.hb-green {
+    background-color: var.$color-hb-green;
+}
+
+.hb-yellow {
+    background-color: var.$color-hb-yellow;
+}
+
+.hb-red {
+    background-color: var.$color-hb-red;
+}
+
+.frozen {
+    background-color: var.$color-frozen;
+}
+
+.hidden {
+    display: none;
+}
+
+.concealed {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.revealed {
+    font-weight: 400;
+    font-size: 80px;
+}
+
+.battle-btns-concealed {
+    display: none;
+}
+
+.battle-btns-revealed {
+    display:flex;
+}
+
+.btn-enabled {
+    display: flex;
+}
+
+.btn-disabled {
+    display: flex;
+    opacity: 0.16;
+    pointer-events: none;
+}
+
+.concealed,
+.btn-enabled {
+    cursor: pointer;
+}
+
+.disabled-interaction {
+    cursor: default;
+    pointer-events: none;
+}
+
+.large {
+    font-size: 48px;
+}

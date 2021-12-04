@@ -1,0 +1,22 @@
+@use '../utils';
+
+.player-bar {
+    width: 320px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: utils.$color-almost-black-8;
+
+    &__hit-points {
+        // width: 100%;
+        height: inherit;
+        border-radius: 4px;
+        // background-color: utils.$color-hb-green;
+    }
+}
+
+.player-percentage {
+    font-size: 21px;
+    text-align: end;
+    // font-weight: 700;
+    width: 56px;
+}

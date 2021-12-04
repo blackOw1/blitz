@@ -1,0 +1,39 @@
+
+@use '../utils';
+
+.button {
+    outline: none;
+    border: none;
+    background-color: utils.$color-almost-black;
+    color: utils.$color-white;
+    cursor: pointer;
+    transition: background-color 250ms;
+
+    &:hover {
+        background-color: lighten(utils.$color-almost-black, 4%);
+    }
+}
+
+.play-button {
+    // display: none;
+    padding: 16px 56px;
+    font-size: 24px;
+    border-radius: 8px;
+    z-index: 200;
+}
+
+.play-again-button {
+    padding: 16px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+// .new-game-button {
+//     padding: 16px 32px;
+//     @include utils.font-24;
+//     border-radius: 4px;
+//     outline: none;
+//     border: none;
+//     font-weight: bold;
+// }
